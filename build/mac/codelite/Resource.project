@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeLite_Project Name="Resource">
+  <VirtualDirectory Name="include">
+    <VirtualDirectory Name="orx">
+      <VirtualDirectory Name="anim">
+        <File Name="../../../include/orx/anim/orxAnim.h"/>
+        <File Name="../../../include/orx/anim/orxAnimPointer.h"/>
+        <File Name="../../../include/orx/anim/orxAnimSet.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="base">
+        <File Name="../../../include/orx/base/orxDecl.h"/>
+        <File Name="../../../include/orx/base/orxModule.h"/>
+        <File Name="../../../include/orx/base/orxType.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="core">
+        <File Name="../../../include/orx/core/orxClock.h"/>
+        <File Name="../../../include/orx/core/orxCommand.h"/>
+        <File Name="../../../include/orx/core/orxConfig.h"/>
+        <File Name="../../../include/orx/core/orxConsole.h"/>
+        <File Name="../../../include/orx/core/orxEvent.h"/>
+        <File Name="../../../include/orx/core/orxLocale.h"/>
+        <File Name="../../../include/orx/core/orxResource.h"/>
+        <File Name="../../../include/orx/core/orxSystem.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="debug">
+        <File Name="../../../include/orx/debug/orxDebug.h"/>
+        <File Name="../../../include/orx/debug/orxFPS.h"/>
+        <File Name="../../../include/orx/debug/orxProfiler.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="display">
+        <File Name="../../../include/orx/display/orxDisplay.h"/>
+        <File Name="../../../include/orx/display/orxFont.h"/>
+        <File Name="../../../include/orx/display/orxGraphic.h"/>
+        <File Name="../../../include/orx/display/orxScreenshot.h"/>
+        <File Name="../../../include/orx/display/orxText.h"/>
+        <File Name="../../../include/orx/display/orxTexture.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="io">
+        <File Name="../../../include/orx/io/orxFile.h"/>
+        <File Name="../../../include/orx/io/orxInput.h"/>
+        <File Name="../../../include/orx/io/orxJoystick.h"/>
+        <File Name="../../../include/orx/io/orxKeyboard.h"/>
+        <File Name="../../../include/orx/io/orxMouse.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="main">
+        <File Name="../../../include/orx/main/orxAndroid.h"/>
+        <File Name="../../../include/orx/main/orxParam.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="math">
+        <File Name="../../../include/orx/math/orxAABox.h"/>
+        <File Name="../../../include/orx/math/orxMath.h"/>
+        <File Name="../../../include/orx/math/orxOBox.h"/>
+        <File Name="../../../include/orx/math/orxVector.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="memory">
+        <File Name="../../../include/orx/memory/orxBank.h"/>
+        <File Name="../../../include/orx/memory/orxMemory.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="object">
+        <File Name="../../../include/orx/object/orxFX.h"/>
+        <File Name="../../../include/orx/object/orxFXPointer.h"/>
+        <File Name="../../../include/orx/object/orxFrame.h"/>
+        <File Name="../../../include/orx/object/orxObject.h"/>
+        <File Name="../../../include/orx/object/orxSpawner.h"/>
+        <File Name="../../../include/orx/object/orxStructure.h"/>
+        <File Name="../../../include/orx/object/orxTimeLine.h"/>
+      </VirtualDirectory>
+      <File Name="../../../include/orx/orx.h"/>
+      <File Name="../../../include/orx/orxInclude.h"/>
+      <File Name="../../../include/orx/orxKernel.h"/>
+      <File Name="../../../include/orx/orxPluginAPI.h"/>
+      <File Name="../../../include/orx/orxUtils.h"/>
+      <VirtualDirectory Name="physics">
+        <File Name="../../../include/orx/physics/orxBody.h"/>
+        <File Name="../../../include/orx/physics/orxPhysics.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="plugin">
+        <VirtualDirectory Name="define">
+          <File Name="../../../include/orx/plugin/define/orxPlugin_CoreDefine.h"/>
+          <File Name="../../../include/orx/plugin/define/orxPlugin_CoreID.h"/>
+          <File Name="../../../include/orx/plugin/define/orxPlugin_Display.h"/>
+          <File Name="../../../include/orx/plugin/define/orxPlugin_Joystick.h"/>
+          <File Name="../../../include/orx/plugin/define/orxPlugin_Keyboard.h"/>
+          <File Name="../../../include/orx/plugin/define/orxPlugin_Mouse.h"/>
+          <File Name="../../../include/orx/plugin/define/orxPlugin_Physics.h"/>
+          <File Name="../../../include/orx/plugin/define/orxPlugin_Render.h"/>
+          <File Name="../../../include/orx/plugin/define/orxPlugin_SoundSystem.h"/>
+        </VirtualDirectory>
+        <File Name="../../../include/orx/plugin/orxPlugin.h"/>
+        <File Name="../../../include/orx/plugin/orxPluginCore.h"/>
+        <File Name="../../../include/orx/plugin/orxPluginType.h"/>
+        <File Name="../../../include/orx/plugin/orxPluginUser.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="render">
+        <File Name="../../../include/orx/render/orxCamera.h"/>
+        <File Name="../../../include/orx/render/orxRender.h"/>
+        <File Name="../../../include/orx/render/orxShader.h"/>
+        <File Name="../../../include/orx/render/orxShaderPointer.h"/>
+        <File Name="../../../include/orx/render/orxViewport.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="sound">
+        <File Name="../../../include/orx/sound/orxSound.h"/>
+        <File Name="../../../include/orx/sound/orxSoundPointer.h"/>
+        <File Name="../../../include/orx/sound/orxSoundSystem.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="utils">
+        <File Name="../../../include/orx/utils/orxHashTable.h"/>
+        <File Name="../../../include/orx/utils/orxLinkList.h"/>
+        <File Name="../../../include/orx/utils/orxString.h"/>
+        <File Name="../../../include/orx/utils/orxTree.h"/>
+      </VirtualDirectory>
+    </VirtualDirectory>
+    <File Name="../../../include/resource.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="src">
+    <File Name="../../../src/resource.cpp"/>
+  </VirtualDirectory>
+  <Settings Type="Executable">
+    <Configuration Name="debug64" CompilerType="gnu g++" DebuggerType="GNU gdb debugger" Type="Executable">
+      <General OutputFile="../../../bin/mac/resourced" IntermediateDirectory="$(ConfigurationName)" Command="./resourced" CommandArguments="" WorkingDirectory="../../../bin/mac" PauseExecWhenProcTerminates="yes"/>
+      <Compiler Required="yes" Options="-msse2;-ffast-math;-g;-m64;-fno-exceptions;-isysroot /Developer/SDKs/MacOSX10.6.sdk;-mmacosx-version-min=10.6;-gdwarf-2;-Wno-write-strings">
+        <IncludePath Value="../../../include"/>
+        <IncludePath Value="../../../include/orx"/>
+        <Preprocessor Value="__orxDEBUG__"/>
+      </Compiler>
+      <Linker Required="yes" Options="-m64;-L/usr/lib64;-isysroot /Developer/SDKs/MacOSX10.6.sdk;-mmacosx-version-min=10.6;-dead_strip">
+        <LibraryPath Value="../../../lib/mac" />
+        <Library Value="orxd" />
+        <Library Value="Foundation.framework" />
+        <Library Value="AppKit.framework" />
+      </Linker>
+      <ResourceCompiler Required="no" Options=""/>
+      <CustomBuild Enabled="no">
+        <CleanCommand></CleanCommand>
+        <BuildCommand></BuildCommand>
+        <SingleFileCommand></SingleFileCommand>
+        <MakefileGenerationCommand></MakefileGenerationCommand>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory></WorkingDirectory>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild></CustomPostBuild>
+        <CustomPreBuild></CustomPreBuild>
+      </AdditionalRules>
+    </Configuration>
+    <Configuration Name="profile64" CompilerType="gnu g++" DebuggerType="GNU gdb debugger" Type="Executable">
+      <General OutputFile="../../../bin/mac/resourcep" IntermediateDirectory="$(ConfigurationName)" Command="./resourcep" CommandArguments="" WorkingDirectory="../../../bin/mac" PauseExecWhenProcTerminates="yes"/>
+      <Compiler Required="yes" Options="-msse2;-ffast-math;-g;-O2;-m64;-fno-exceptions;-fno-rtti;-isysroot /Developer/SDKs/MacOSX10.6.sdk;-mmacosx-version-min=10.6;-gdwarf-2;-Wno-write-strings">
+        <IncludePath Value="../../../include"/>
+        <IncludePath Value="../../../include/orx"/>
+        <Preprocessor Value="__orxPROFILER__"/>
+      </Compiler>
+      <Linker Required="yes" Options="-m64;-L/usr/lib64;-isysroot /Developer/SDKs/MacOSX10.6.sdk;-mmacosx-version-min=10.6;-dead_strip">
+        <LibraryPath Value="../../../lib/mac" />
+        <Library Value="orxp" />
+        <Library Value="Foundation.framework" />
+        <Library Value="AppKit.framework" />
+      </Linker>
+      <ResourceCompiler Required="no" Options=""/>
+      <CustomBuild Enabled="no">
+        <CleanCommand></CleanCommand>
+        <BuildCommand></BuildCommand>
+        <SingleFileCommand></SingleFileCommand>
+        <MakefileGenerationCommand></MakefileGenerationCommand>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory></WorkingDirectory>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild></CustomPostBuild>
+        <CustomPreBuild></CustomPreBuild>
+      </AdditionalRules>
+    </Configuration>
+    <Configuration Name="release64" CompilerType="gnu g++" DebuggerType="GNU gdb debugger" Type="Executable">
+      <General OutputFile="../../../bin/mac/resource" IntermediateDirectory="$(ConfigurationName)" Command="./resource" CommandArguments="" WorkingDirectory="../../../bin/mac" PauseExecWhenProcTerminates="yes"/>
+      <Compiler Required="yes" Options="-msse2;-ffast-math;-g;-O2;-m64;-fno-exceptions;-fno-rtti;-isysroot /Developer/SDKs/MacOSX10.6.sdk;-mmacosx-version-min=10.6;-gdwarf-2;-Wno-write-strings">
+        <IncludePath Value="../../../include"/>
+        <IncludePath Value="../../../include/orx"/>
+      </Compiler>
+      <Linker Required="yes" Options="-m64;-L/usr/lib64;-isysroot /Developer/SDKs/MacOSX10.6.sdk;-mmacosx-version-min=10.6;-dead_strip">
+        <LibraryPath Value="../../../lib/mac" />
+        <Library Value="orx" />
+        <Library Value="Foundation.framework" />
+        <Library Value="AppKit.framework" />
+      </Linker>
+      <ResourceCompiler Required="no" Options=""/>
+      <CustomBuild Enabled="no">
+        <CleanCommand></CleanCommand>
+        <BuildCommand></BuildCommand>
+        <SingleFileCommand></SingleFileCommand>
+        <MakefileGenerationCommand></MakefileGenerationCommand>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory></WorkingDirectory>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild></CustomPostBuild>
+        <CustomPreBuild></CustomPreBuild>
+      </AdditionalRules>
+    </Configuration>
+    <Configuration Name="debug32" CompilerType="gnu g++" DebuggerType="GNU gdb debugger" Type="Executable">
+      <General OutputFile="../../../bin/mac/resourced" IntermediateDirectory="$(ConfigurationName)" Command="./resourced" CommandArguments="" WorkingDirectory="../../../bin/mac" PauseExecWhenProcTerminates="yes"/>
+      <Compiler Required="yes" Options="-msse2;-ffast-math;-g;-m32;-fno-exceptions;-isysroot /Developer/SDKs/MacOSX10.6.sdk;-mmacosx-version-min=10.6;-gdwarf-2;-Wno-write-strings;-mfix-and-continue">
+        <IncludePath Value="../../../include"/>
+        <IncludePath Value="../../../include/orx"/>
+        <Preprocessor Value="__orxDEBUG__"/>
+      </Compiler>
+      <Linker Required="yes" Options="-m32;-L/usr/lib32;-isysroot /Developer/SDKs/MacOSX10.6.sdk;-mmacosx-version-min=10.6;-dead_strip">
+        <LibraryPath Value="../../../lib/mac" />
+        <Library Value="orxd" />
+        <Library Value="Foundation.framework" />
+        <Library Value="AppKit.framework" />
+      </Linker>
+      <ResourceCompiler Required="no" Options=""/>
+      <CustomBuild Enabled="no">
+        <CleanCommand></CleanCommand>
+        <BuildCommand></BuildCommand>
+        <SingleFileCommand></SingleFileCommand>
+        <MakefileGenerationCommand></MakefileGenerationCommand>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory></WorkingDirectory>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild></CustomPostBuild>
+        <CustomPreBuild></CustomPreBuild>
+      </AdditionalRules>
+    </Configuration>
+    <Configuration Name="profile32" CompilerType="gnu g++" DebuggerType="GNU gdb debugger" Type="Executable">
+      <General OutputFile="../../../bin/mac/resourcep" IntermediateDirectory="$(ConfigurationName)" Command="./resourcep" CommandArguments="" WorkingDirectory="../../../bin/mac" PauseExecWhenProcTerminates="yes"/>
+      <Compiler Required="yes" Options="-msse2;-ffast-math;-g;-O2;-m32;-fno-exceptions;-fno-rtti;-isysroot /Developer/SDKs/MacOSX10.6.sdk;-mmacosx-version-min=10.6;-gdwarf-2;-Wno-write-strings;-mfix-and-continue">
+        <IncludePath Value="../../../include"/>
+        <IncludePath Value="../../../include/orx"/>
+        <Preprocessor Value="__orxPROFILER__"/>
+      </Compiler>
+      <Linker Required="yes" Options="-m32;-L/usr/lib32;-isysroot /Developer/SDKs/MacOSX10.6.sdk;-mmacosx-version-min=10.6;-dead_strip">
+        <LibraryPath Value="../../../lib/mac" />
+        <Library Value="orxp" />
+        <Library Value="Foundation.framework" />
+        <Library Value="AppKit.framework" />
+      </Linker>
+      <ResourceCompiler Required="no" Options=""/>
+      <CustomBuild Enabled="no">
+        <CleanCommand></CleanCommand>
+        <BuildCommand></BuildCommand>
+        <SingleFileCommand></SingleFileCommand>
+        <MakefileGenerationCommand></MakefileGenerationCommand>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory></WorkingDirectory>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild></CustomPostBuild>
+        <CustomPreBuild></CustomPreBuild>
+      </AdditionalRules>
+    </Configuration>
+    <Configuration Name="release32" CompilerType="gnu g++" DebuggerType="GNU gdb debugger" Type="Executable">
+      <General OutputFile="../../../bin/mac/resource" IntermediateDirectory="$(ConfigurationName)" Command="./resource" CommandArguments="" WorkingDirectory="../../../bin/mac" PauseExecWhenProcTerminates="yes"/>
+      <Compiler Required="yes" Options="-msse2;-ffast-math;-g;-O2;-m32;-fno-exceptions;-fno-rtti;-isysroot /Developer/SDKs/MacOSX10.6.sdk;-mmacosx-version-min=10.6;-gdwarf-2;-Wno-write-strings;-mfix-and-continue">
+        <IncludePath Value="../../../include"/>
+        <IncludePath Value="../../../include/orx"/>
+      </Compiler>
+      <Linker Required="yes" Options="-m32;-L/usr/lib32;-isysroot /Developer/SDKs/MacOSX10.6.sdk;-mmacosx-version-min=10.6;-dead_strip">
+        <LibraryPath Value="../../../lib/mac" />
+        <Library Value="orx" />
+        <Library Value="Foundation.framework" />
+        <Library Value="AppKit.framework" />
+      </Linker>
+      <ResourceCompiler Required="no" Options=""/>
+      <CustomBuild Enabled="no">
+        <CleanCommand></CleanCommand>
+        <BuildCommand></BuildCommand>
+        <SingleFileCommand></SingleFileCommand>
+        <MakefileGenerationCommand></MakefileGenerationCommand>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory></WorkingDirectory>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild></CustomPostBuild>
+        <CustomPreBuild></CustomPreBuild>
+      </AdditionalRules>
+    </Configuration>
+  </Settings>
+  <Dependencies name="Debug|x64">
+  </Dependencies>
+  <Dependencies name="Profile|x64">
+  </Dependencies>
+  <Dependencies name="Release|x64">
+  </Dependencies>
+  <Dependencies name="Debug|x32">
+  </Dependencies>
+  <Dependencies name="Profile|x32">
+  </Dependencies>
+  <Dependencies name="Release|x32">
+  </Dependencies>
+</CodeLite_Project>

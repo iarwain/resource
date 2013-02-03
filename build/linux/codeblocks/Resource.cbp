@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Resource" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug|x64">
+				<Option output="../../../bin/linux64/resourced" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/x64/Debug" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-msse2" />
+					<Add option="-ffast-math" />
+					<Add option="-g" />
+					<Add option="-m64" />
+					<Add option="-fno-exceptions" />
+					<Add option="-D__orxDEBUG__" />
+					<Add directory="../../../include" />
+					<Add directory="../../../include/orx" />
+				</Compiler>
+				<Linker>
+					<Add option="-m64" />
+					<Add option="-L/usr/lib64" />
+					<Add directory="../../../lib/linux64" />
+					<Add library="orxd" />
+					<Add library="dl" />
+					<Add library="m" />
+					<Add library="rt" />
+				</Linker>
+			</Target>
+			<Target title="Profile|x64">
+				<Option output="../../../bin/linux64/resourcep" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/x64/Profile" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-msse2" />
+					<Add option="-ffast-math" />
+					<Add option="-g" />
+					<Add option="-O2" />
+					<Add option="-m64" />
+					<Add option="-fno-exceptions" />
+					<Add option="-fno-rtti" />
+					<Add option="-D__orxPROFILER__" />
+					<Add option="-fschedule-insns" />
+					<Add directory="../../../include" />
+					<Add directory="../../../include/orx" />
+				</Compiler>
+				<Linker>
+					<Add option="-m64" />
+					<Add option="-L/usr/lib64" />
+					<Add directory="../../../lib/linux64" />
+					<Add library="orxp" />
+					<Add library="dl" />
+					<Add library="m" />
+					<Add library="rt" />
+				</Linker>
+			</Target>
+			<Target title="Release|x64">
+				<Option output="../../../bin/linux64/resource" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/x64/Release" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-msse2" />
+					<Add option="-ffast-math" />
+					<Add option="-g" />
+					<Add option="-O2" />
+					<Add option="-m64" />
+					<Add option="-fno-exceptions" />
+					<Add option="-fno-rtti" />
+					<Add option="-fschedule-insns" />
+					<Add directory="../../../include" />
+					<Add directory="../../../include/orx" />
+				</Compiler>
+				<Linker>
+					<Add option="-m64" />
+					<Add option="-L/usr/lib64" />
+					<Add directory="../../../lib/linux64" />
+					<Add library="orx" />
+					<Add library="dl" />
+					<Add library="m" />
+					<Add library="rt" />
+				</Linker>
+			</Target>
+			<Target title="Debug|x32">
+				<Option output="../../../bin/linux32/resourced" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/x32/Debug" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-msse2" />
+					<Add option="-ffast-math" />
+					<Add option="-g" />
+					<Add option="-m32" />
+					<Add option="-fno-exceptions" />
+					<Add option="-D__orxDEBUG__" />
+					<Add directory="../../../include" />
+					<Add directory="../../../include/orx" />
+				</Compiler>
+				<Linker>
+					<Add option="-m32" />
+					<Add option="-L/usr/lib32" />
+					<Add directory="../../../lib/linux32" />
+					<Add library="orxd" />
+					<Add library="dl" />
+					<Add library="m" />
+					<Add library="rt" />
+				</Linker>
+			</Target>
+			<Target title="Profile|x32">
+				<Option output="../../../bin/linux32/resourcep" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/x32/Profile" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-msse2" />
+					<Add option="-ffast-math" />
+					<Add option="-g" />
+					<Add option="-O2" />
+					<Add option="-m32" />
+					<Add option="-fno-exceptions" />
+					<Add option="-fno-rtti" />
+					<Add option="-D__orxPROFILER__" />
+					<Add option="-fschedule-insns" />
+					<Add directory="../../../include" />
+					<Add directory="../../../include/orx" />
+				</Compiler>
+				<Linker>
+					<Add option="-m32" />
+					<Add option="-L/usr/lib32" />
+					<Add directory="../../../lib/linux32" />
+					<Add library="orxp" />
+					<Add library="dl" />
+					<Add library="m" />
+					<Add library="rt" />
+				</Linker>
+			</Target>
+			<Target title="Release|x32">
+				<Option output="../../../bin/linux32/resource" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/x32/Release" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-msse2" />
+					<Add option="-ffast-math" />
+					<Add option="-g" />
+					<Add option="-O2" />
+					<Add option="-m32" />
+					<Add option="-fno-exceptions" />
+					<Add option="-fno-rtti" />
+					<Add option="-fschedule-insns" />
+					<Add directory="../../../include" />
+					<Add directory="../../../include/orx" />
+				</Compiler>
+				<Linker>
+					<Add option="-m32" />
+					<Add option="-L/usr/lib32" />
+					<Add directory="../../../lib/linux32" />
+					<Add library="orx" />
+					<Add library="dl" />
+					<Add library="m" />
+					<Add library="rt" />
+				</Linker>
+			</Target>
+		</Build>
+		<Unit filename="../../../src/resource.cpp">
+			<Option virtualFolder="src" />
+		</Unit>
+		<Unit filename="../../../include/resource.h">
+			<Option virtualFolder="include" />
+		</Unit>
+		<Unit filename="../../../include/orx/orx.h">
+			<Option virtualFolder="include/orx" />
+		</Unit>
+		<Unit filename="../../../include/orx/orxInclude.h">
+			<Option virtualFolder="include/orx" />
+		</Unit>
+		<Unit filename="../../../include/orx/orxKernel.h">
+			<Option virtualFolder="include/orx" />
+		</Unit>
+		<Unit filename="../../../include/orx/orxPluginAPI.h">
+			<Option virtualFolder="include/orx" />
+		</Unit>
+		<Unit filename="../../../include/orx/orxUtils.h">
+			<Option virtualFolder="include/orx" />
+		</Unit>
+		<Unit filename="../../../include/orx/anim/orxAnim.h">
+			<Option virtualFolder="include/orx/anim" />
+		</Unit>
+		<Unit filename="../../../include/orx/anim/orxAnimPointer.h">
+			<Option virtualFolder="include/orx/anim" />
+		</Unit>
+		<Unit filename="../../../include/orx/anim/orxAnimSet.h">
+			<Option virtualFolder="include/orx/anim" />
+		</Unit>
+		<Unit filename="../../../include/orx/base/orxDecl.h">
+			<Option virtualFolder="include/orx/base" />
+		</Unit>
+		<Unit filename="../../../include/orx/base/orxModule.h">
+			<Option virtualFolder="include/orx/base" />
+		</Unit>
+		<Unit filename="../../../include/orx/base/orxType.h">
+			<Option virtualFolder="include/orx/base" />
+		</Unit>
+		<Unit filename="../../../include/orx/core/orxClock.h">
+			<Option virtualFolder="include/orx/core" />
+		</Unit>
+		<Unit filename="../../../include/orx/core/orxCommand.h">
+			<Option virtualFolder="include/orx/core" />
+		</Unit>
+		<Unit filename="../../../include/orx/core/orxConfig.h">
+			<Option virtualFolder="include/orx/core" />
+		</Unit>
+		<Unit filename="../../../include/orx/core/orxConsole.h">
+			<Option virtualFolder="include/orx/core" />
+		</Unit>
+		<Unit filename="../../../include/orx/core/orxEvent.h">
+			<Option virtualFolder="include/orx/core" />
+		</Unit>
+		<Unit filename="../../../include/orx/core/orxLocale.h">
+			<Option virtualFolder="include/orx/core" />
+		</Unit>
+		<Unit filename="../../../include/orx/core/orxResource.h">
+			<Option virtualFolder="include/orx/core" />
+		</Unit>
+		<Unit filename="../../../include/orx/core/orxSystem.h">
+			<Option virtualFolder="include/orx/core" />
+		</Unit>
+		<Unit filename="../../../include/orx/debug/orxDebug.h">
+			<Option virtualFolder="include/orx/debug" />
+		</Unit>
+		<Unit filename="../../../include/orx/debug/orxFPS.h">
+			<Option virtualFolder="include/orx/debug" />
+		</Unit>
+		<Unit filename="../../../include/orx/debug/orxProfiler.h">
+			<Option virtualFolder="include/orx/debug" />
+		</Unit>
+		<Unit filename="../../../include/orx/display/orxDisplay.h">
+			<Option virtualFolder="include/orx/display" />
+		</Unit>
+		<Unit filename="../../../include/orx/display/orxFont.h">
+			<Option virtualFolder="include/orx/display" />
+		</Unit>
+		<Unit filename="../../../include/orx/display/orxGraphic.h">
+			<Option virtualFolder="include/orx/display" />
+		</Unit>
+		<Unit filename="../../../include/orx/display/orxScreenshot.h">
+			<Option virtualFolder="include/orx/display" />
+		</Unit>
+		<Unit filename="../../../include/orx/display/orxText.h">
+			<Option virtualFolder="include/orx/display" />
+		</Unit>
+		<Unit filename="../../../include/orx/display/orxTexture.h">
+			<Option virtualFolder="include/orx/display" />
+		</Unit>
+		<Unit filename="../../../include/orx/io/orxFile.h">
+			<Option virtualFolder="include/orx/io" />
+		</Unit>
+		<Unit filename="../../../include/orx/io/orxInput.h">
+			<Option virtualFolder="include/orx/io" />
+		</Unit>
+		<Unit filename="../../../include/orx/io/orxJoystick.h">
+			<Option virtualFolder="include/orx/io" />
+		</Unit>
+		<Unit filename="../../../include/orx/io/orxKeyboard.h">
+			<Option virtualFolder="include/orx/io" />
+		</Unit>
+		<Unit filename="../../../include/orx/io/orxMouse.h">
+			<Option virtualFolder="include/orx/io" />
+		</Unit>
+		<Unit filename="../../../include/orx/main/orxAndroid.h">
+			<Option virtualFolder="include/orx/main" />
+		</Unit>
+		<Unit filename="../../../include/orx/main/orxParam.h">
+			<Option virtualFolder="include/orx/main" />
+		</Unit>
+		<Unit filename="../../../include/orx/math/orxAABox.h">
+			<Option virtualFolder="include/orx/math" />
+		</Unit>
+		<Unit filename="../../../include/orx/math/orxMath.h">
+			<Option virtualFolder="include/orx/math" />
+		</Unit>
+		<Unit filename="../../../include/orx/math/orxOBox.h">
+			<Option virtualFolder="include/orx/math" />
+		</Unit>
+		<Unit filename="../../../include/orx/math/orxVector.h">
+			<Option virtualFolder="include/orx/math" />
+		</Unit>
+		<Unit filename="../../../include/orx/memory/orxBank.h">
+			<Option virtualFolder="include/orx/memory" />
+		</Unit>
+		<Unit filename="../../../include/orx/memory/orxMemory.h">
+			<Option virtualFolder="include/orx/memory" />
+		</Unit>
+		<Unit filename="../../../include/orx/object/orxFrame.h">
+			<Option virtualFolder="include/orx/object" />
+		</Unit>
+		<Unit filename="../../../include/orx/object/orxFX.h">
+			<Option virtualFolder="include/orx/object" />
+		</Unit>
+		<Unit filename="../../../include/orx/object/orxFXPointer.h">
+			<Option virtualFolder="include/orx/object" />
+		</Unit>
+		<Unit filename="../../../include/orx/object/orxObject.h">
+			<Option virtualFolder="include/orx/object" />
+		</Unit>
+		<Unit filename="../../../include/orx/object/orxSpawner.h">
+			<Option virtualFolder="include/orx/object" />
+		</Unit>
+		<Unit filename="../../../include/orx/object/orxStructure.h">
+			<Option virtualFolder="include/orx/object" />
+		</Unit>
+		<Unit filename="../../../include/orx/object/orxTimeLine.h">
+			<Option virtualFolder="include/orx/object" />
+		</Unit>
+		<Unit filename="../../../include/orx/physics/orxBody.h">
+			<Option virtualFolder="include/orx/physics" />
+		</Unit>
+		<Unit filename="../../../include/orx/physics/orxPhysics.h">
+			<Option virtualFolder="include/orx/physics" />
+		</Unit>
+		<Unit filename="../../../include/orx/plugin/orxPlugin.h">
+			<Option virtualFolder="include/orx/plugin" />
+		</Unit>
+		<Unit filename="../../../include/orx/plugin/orxPluginCore.h">
+			<Option virtualFolder="include/orx/plugin" />
+		</Unit>
+		<Unit filename="../../../include/orx/plugin/orxPluginType.h">
+			<Option virtualFolder="include/orx/plugin" />
+		</Unit>
+		<Unit filename="../../../include/orx/plugin/orxPluginUser.h">
+			<Option virtualFolder="include/orx/plugin" />
+		</Unit>
+		<Unit filename="../../../include/orx/plugin/define/orxPlugin_CoreDefine.h">
+			<Option virtualFolder="include/orx/plugin/define" />
+		</Unit>
+		<Unit filename="../../../include/orx/plugin/define/orxPlugin_CoreID.h">
+			<Option virtualFolder="include/orx/plugin/define" />
+		</Unit>
+		<Unit filename="../../../include/orx/plugin/define/orxPlugin_Display.h">
+			<Option virtualFolder="include/orx/plugin/define" />
+		</Unit>
+		<Unit filename="../../../include/orx/plugin/define/orxPlugin_Joystick.h">
+			<Option virtualFolder="include/orx/plugin/define" />
+		</Unit>
+		<Unit filename="../../../include/orx/plugin/define/orxPlugin_Keyboard.h">
+			<Option virtualFolder="include/orx/plugin/define" />
+		</Unit>
+		<Unit filename="../../../include/orx/plugin/define/orxPlugin_Mouse.h">
+			<Option virtualFolder="include/orx/plugin/define" />
+		</Unit>
+		<Unit filename="../../../include/orx/plugin/define/orxPlugin_Physics.h">
+			<Option virtualFolder="include/orx/plugin/define" />
+		</Unit>
+		<Unit filename="../../../include/orx/plugin/define/orxPlugin_Render.h">
+			<Option virtualFolder="include/orx/plugin/define" />
+		</Unit>
+		<Unit filename="../../../include/orx/plugin/define/orxPlugin_SoundSystem.h">
+			<Option virtualFolder="include/orx/plugin/define" />
+		</Unit>
+		<Unit filename="../../../include/orx/render/orxCamera.h">
+			<Option virtualFolder="include/orx/render" />
+		</Unit>
+		<Unit filename="../../../include/orx/render/orxRender.h">
+			<Option virtualFolder="include/orx/render" />
+		</Unit>
+		<Unit filename="../../../include/orx/render/orxShader.h">
+			<Option virtualFolder="include/orx/render" />
+		</Unit>
+		<Unit filename="../../../include/orx/render/orxShaderPointer.h">
+			<Option virtualFolder="include/orx/render" />
+		</Unit>
+		<Unit filename="../../../include/orx/render/orxViewport.h">
+			<Option virtualFolder="include/orx/render" />
+		</Unit>
+		<Unit filename="../../../include/orx/sound/orxSound.h">
+			<Option virtualFolder="include/orx/sound" />
+		</Unit>
+		<Unit filename="../../../include/orx/sound/orxSoundPointer.h">
+			<Option virtualFolder="include/orx/sound" />
+		</Unit>
+		<Unit filename="../../../include/orx/sound/orxSoundSystem.h">
+			<Option virtualFolder="include/orx/sound" />
+		</Unit>
+		<Unit filename="../../../include/orx/utils/orxHashTable.h">
+			<Option virtualFolder="include/orx/utils" />
+		</Unit>
+		<Unit filename="../../../include/orx/utils/orxLinkList.h">
+			<Option virtualFolder="include/orx/utils" />
+		</Unit>
+		<Unit filename="../../../include/orx/utils/orxString.h">
+			<Option virtualFolder="include/orx/utils" />
+		</Unit>
+		<Unit filename="../../../include/orx/utils/orxTree.h">
+			<Option virtualFolder="include/orx/utils" />
+		</Unit>
+		<Extensions>
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
+
