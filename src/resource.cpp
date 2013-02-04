@@ -1,13 +1,13 @@
 //! Includes
 #include "resource.h"
 
-// Using the wonderful miniz by Rich Geldreich to add support for ZIP archives to orx
+// Using the wonderful miniz by Rich Geldreich to add support for zip archives to orx
 #include "miniz.c"
 
 
 //! Variables
 
-// Custom Zip archive wrapper
+// Custom zip archive wrapper
 typedef struct ZipArchive
 {
   orxS32  s32Size, s32Cursor;
@@ -18,7 +18,7 @@ typedef struct ZipArchive
 
 //! Code
 
-// --- Custom ZIP archive code ---
+// --- Custom zip archive code ---
 
 // Locate function, returns NULL if it can't handle the storage or if the resource can't be found in this storage
 const orxSTRING orxFASTCALL ZipLocate(const orxSTRING _zStorage, const orxSTRING _zResource)
@@ -27,10 +27,10 @@ const orxSTRING orxFASTCALL ZipLocate(const orxSTRING _zStorage, const orxSTRING
   orxSTRING       zResult = orxNULL;
   static orxCHAR  acBuffer[512] = {0};
 
-  // Clears ZIP archive memory
+  // Clears zip archive memory
   orxMemory_Zero(&stZipArchive, sizeof(mz_zip_archive));
 
-  // Can open ZIP file?
+  // Can open zip file?
   if(mz_zip_reader_init_file(&stZipArchive, _zStorage, 0))
   {
     int iIndex;
@@ -45,7 +45,7 @@ const orxSTRING orxFASTCALL ZipLocate(const orxSTRING _zStorage, const orxSTRING
       zResult = acBuffer;
     }
 
-    // Closes ZIP file
+    // Closes zip file
     mz_zip_reader_end(&stZipArchive);
   }
 
@@ -53,7 +53,7 @@ const orxSTRING orxFASTCALL ZipLocate(const orxSTRING _zStorage, const orxSTRING
   return zResult;
 }
 
-// Open function: returns an opaque handle for subsequent function calls (GetSize, Seek, Tell, Read and Close)
+// Open function: returns an opaque handle for subsequent function calls (GetSize, Seek, Tell, Read and Close) upon success, orxHANDLE_UNDEFINED otherwise
 orxHANDLE orxFASTCALL ZipOpen(const orxSTRING _zLocation)
 {
   orxS32    s32Separator;
@@ -70,7 +70,7 @@ orxHANDLE orxFASTCALL ZipOpen(const orxSTRING _zLocation)
     // Clears archive memory
     orxMemory_Zero(&stZipArchive, sizeof(mz_zip_archive));
 
-    // Can open ZIP file?
+    // Can open zip file?
     if(mz_zip_reader_init_file(&stZipArchive, _zLocation, 0))
     {
       orxS32 s32Index;
@@ -118,7 +118,7 @@ orxHANDLE orxFASTCALL ZipOpen(const orxSTRING _zLocation)
         }
       }
 
-      // Closes ZIP file
+      // Closes zip file
       mz_zip_reader_end(&stZipArchive);
     }
 
@@ -145,7 +145,7 @@ void orxFASTCALL ZipClose(orxHANDLE _hResource)
   orxMemory_Free(pstZipArchive);
 }
 
-// GetSize function: Simply returns the size of the resource, in bytes
+// GetSize function: simply returns the size of the extracted resource, in bytes
 orxS32 orxFASTCALL ZipGetSize(orxHANDLE _hResource)
 {
   orxS32 s32Result;
@@ -221,7 +221,7 @@ orxS32 orxFASTCALL ZipTell(orxHANDLE _hResource)
   return s32Result;
 }
 
-// Read function: copies the requested amount of data, in bytes, to the given buffer
+// Read function: copies the requested amount of data, in bytes, to the given buffer and returns the amount of bytes copied
 orxS32 orxFASTCALL ZipRead(orxHANDLE _hResource, orxS32 _s32Size, void *_pu8Buffer)
 {
   ZipArchive *pstZipArchive;
@@ -243,7 +243,7 @@ orxS32 orxFASTCALL ZipRead(orxHANDLE _hResource, orxS32 _s32Size, void *_pu8Buff
   return s32CopySize;
 }
 
-// --- End of custom ZIP archive code ---
+// --- End of custom zip archive code ---
 
 
 orxSTATUS orxFASTCALL Init()
@@ -251,7 +251,7 @@ orxSTATUS orxFASTCALL Init()
   orxRESOURCE_TYPE_INFO stInfo;
   orxSTATUS             eResult = orxSTATUS_SUCCESS;
 
-  // Inits our ZIP resource wrapper
+  // Inits our zip resource wrapper
   orxMemory_Zero(&stInfo, sizeof(orxRESOURCE_TYPE_INFO));
   stInfo.zTag       = "zip";
   stInfo.pfnLocate  = ZipLocate;
@@ -268,6 +268,9 @@ orxSTATUS orxFASTCALL Init()
   // Success?
   if(eResult != orxSTATUS_FAILURE)
   {
+    // Loads data config
+    orxConfig_Load("data.ini");
+
     // Creates viewport
     orxViewport_CreateFromConfig("Viewport");
 
@@ -281,7 +284,54 @@ orxSTATUS orxFASTCALL Init()
 
 orxSTATUS orxFASTCALL Run()
 {
+  orxVECTOR vMousePos;
   orxSTATUS eResult = orxSTATUS_SUCCESS;
+
+  // Gets mouse world position
+  if(orxRender_GetWorldPosition(orxMouse_GetPosition(&vMousePos), &vMousePos) != orxNULL)
+  {
+    // New status for Action input?
+    if(orxInput_HasNewStatus("Action") != orxFALSE)
+    {
+      orxOBJECT *pstPickedObject;
+
+      // Updates picking position
+      vMousePos.fZ += orxFLOAT_1;
+
+      // Picks object
+      pstPickedObject = orxObject_Pick(&vMousePos);
+
+      // Found?
+      if(pstPickedObject != orxNULL)
+      {
+        // Pushes its config section
+        orxConfig_PushSection(orxObject_GetName(pstPickedObject));
+
+        // Action?
+        if(orxInput_IsActive("Action") != orxFALSE)
+        {
+          // Has click track?
+          if(orxConfig_HasValue("OnClickTrack") != orxFALSE)
+          {
+            // Adds it
+            orxObject_AddTimeLineTrack(pstPickedObject, orxConfig_GetString("OnClickTrack"));
+          }
+        }
+        else
+        {
+          // Has release track?
+          if(orxConfig_HasValue("OnReleaseTrack"))
+          {
+            // Adds it
+            orxObject_AddTimeLineTrack(pstPickedObject, orxConfig_GetString("OnReleaseTrack"));
+          }
+        }
+
+        // Pops config section
+        orxConfig_PopSection();
+      }
+    }
+  }
 
   // Screenshot?
   if(orxInput_IsActive("Screenshot") && orxInput_HasNewStatus("Screenshot"))

@@ -1,0 +1,12 @@
+syntax: glob
+**.obj
+**.ncb
+**.idb
+**.o
+**.ilk
+**.pdb
+**.htm
+**.log
+**.cih
+**.suo
+**.user
