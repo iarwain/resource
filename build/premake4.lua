@@ -166,6 +166,7 @@ project "Resource"
 -- Linux
 
     configuration {"linux"}
+        linkoptions {"-Wl,-rpath ./", "-Wl,--export-dynamic"}
         links
         {
             "dl",

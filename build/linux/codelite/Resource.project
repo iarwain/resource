@@ -123,7 +123,7 @@
         <IncludePath Value="../../../include/orx"/>
         <Preprocessor Value="__orxDEBUG__"/>
       </Compiler>
-      <Linker Required="yes" Options="-m64;-L/usr/lib64">
+      <Linker Required="yes" Options="-m64;-L/usr/lib64;-Wl,-rpath ./;-Wl,--export-dynamic">
         <LibraryPath Value="../../../lib/linux64" />
         <Library Value="orxd" />
         <Library Value="dl" />
@@ -151,7 +151,7 @@
         <IncludePath Value="../../../include/orx"/>
         <Preprocessor Value="__orxPROFILER__"/>
       </Compiler>
-      <Linker Required="yes" Options="-m64;-L/usr/lib64">
+      <Linker Required="yes" Options="-m64;-L/usr/lib64;-Wl,-rpath ./;-Wl,--export-dynamic">
         <LibraryPath Value="../../../lib/linux64" />
         <Library Value="orxp" />
         <Library Value="dl" />
@@ -178,7 +178,7 @@
         <IncludePath Value="../../../include"/>
         <IncludePath Value="../../../include/orx"/>
       </Compiler>
-      <Linker Required="yes" Options="-m64;-L/usr/lib64">
+      <Linker Required="yes" Options="-m64;-L/usr/lib64;-Wl,-rpath ./;-Wl,--export-dynamic">
         <LibraryPath Value="../../../lib/linux64" />
         <Library Value="orx" />
         <Library Value="dl" />
@@ -206,7 +206,7 @@
         <IncludePath Value="../../../include/orx"/>
         <Preprocessor Value="__orxDEBUG__"/>
       </Compiler>
-      <Linker Required="yes" Options="-m32;-L/usr/lib32">
+      <Linker Required="yes" Options="-m32;-L/usr/lib32;-Wl,-rpath ./;-Wl,--export-dynamic">
         <LibraryPath Value="../../../lib/linux32" />
         <Library Value="orxd" />
         <Library Value="dl" />
@@ -234,7 +234,7 @@
         <IncludePath Value="../../../include/orx"/>
         <Preprocessor Value="__orxPROFILER__"/>
       </Compiler>
-      <Linker Required="yes" Options="-m32;-L/usr/lib32">
+      <Linker Required="yes" Options="-m32;-L/usr/lib32;-Wl,-rpath ./;-Wl,--export-dynamic">
         <LibraryPath Value="../../../lib/linux32" />
         <Library Value="orxp" />
         <Library Value="dl" />
@@ -261,7 +261,7 @@
         <IncludePath Value="../../../include"/>
         <IncludePath Value="../../../include/orx"/>
       </Compiler>
-      <Linker Required="yes" Options="-m32;-L/usr/lib32">
+      <Linker Required="yes" Options="-m32;-L/usr/lib32;-Wl,-rpath ./;-Wl,--export-dynamic">
         <LibraryPath Value="../../../lib/linux32" />
         <Library Value="orx" />
         <Library Value="dl" />
