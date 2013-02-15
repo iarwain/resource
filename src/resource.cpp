@@ -100,19 +100,28 @@ orxHANDLE orxFASTCALL ZipOpen(const orxSTRING _zLocation)
           // Allocates a buffer for storing uncompressed content
           pstZipArchive->pu8Buffer = (orxU8 *)orxMemory_Allocate(pstZipArchive->s32Size, orxMEMORY_TYPE_MAIN);
 
-          // Extracts content to the buffer
-          if((pstZipArchive != orxNULL)
-          && (mz_zip_reader_extract_to_mem(&stZipArchive, (mz_uint)s32Index, pstZipArchive->pu8Buffer, (size_t)stStat.m_uncomp_size, 0) != MZ_FALSE))
+          // Success?
+          if(pstZipArchive->pu8Buffer != orxNULL)
           {
-            // Inits read cursor
-            pstZipArchive->s32Cursor = 0;
+            // Extracts content to the buffer
+            if(mz_zip_reader_extract_to_mem(&stZipArchive, (mz_uint)s32Index, pstZipArchive->pu8Buffer, (size_t)stStat.m_uncomp_size, 0) != MZ_FALSE)
+            {
+              // Inits read cursor
+              pstZipArchive->s32Cursor = 0;
 
-            // Updates result
-            hResult = (orxHANDLE)pstZipArchive;
+              // Updates result
+              hResult = (orxHANDLE)pstZipArchive;
+            }
+            else
+            {
+              // Frees our buffer and archive wrapper: extraction failure
+              orxMemory_Free(pstZipArchive->pu8Buffer);
+              orxMemory_Free(pstZipArchive);
+            }
           }
           else
           {
-            // Frees our archive wrapper: extraction/buffer allocation failure
+            // Frees our archive wrapper: buffer allocation failure
             orxMemory_Free(pstZipArchive);
           }
         }
