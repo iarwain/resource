@@ -21,7 +21,7 @@ typedef struct ZipArchive
 // --- Custom zip archive code ---
 
 // Locate function, returns NULL if it can't handle the storage or if the resource can't be found in this storage
-const orxSTRING orxFASTCALL ZipLocate(const orxSTRING _zStorage, const orxSTRING _zResource)
+const orxSTRING orxFASTCALL ZipLocate(const orxSTRING _zStorage, const orxSTRING _zResource, orxBOOL _bRequireExistence)
 {
   mz_zip_archive  stZipArchive;
   orxSTRING       zResult = orxNULL;
@@ -54,13 +54,14 @@ const orxSTRING orxFASTCALL ZipLocate(const orxSTRING _zStorage, const orxSTRING
 }
 
 // Open function: returns an opaque handle for subsequent function calls (GetSize, Seek, Tell, Read and Close) upon success, orxHANDLE_UNDEFINED otherwise
-orxHANDLE orxFASTCALL ZipOpen(const orxSTRING _zLocation)
+orxHANDLE orxFASTCALL ZipOpen(const orxSTRING _zLocation, orxBOOL _bEraseMode)
 {
   orxS32    s32Separator;
   orxHANDLE hResult = orxHANDLE_UNDEFINED;
 
-  // Is this location correctly formated?
-  if((s32Separator = orxString_SearchCharIndex(_zLocation, orxRESOURCE_KC_LOCATION_SEPARATOR, 0)) >= 0)
+  // Not in erase mode and is this location correctly formated?
+  if((_bEraseMode == orxFALSE)
+  && ((s32Separator = orxString_SearchCharIndex(_zLocation, orxRESOURCE_KC_LOCATION_SEPARATOR, 0)) >= 0))
   {
     mz_zip_archive stZipArchive;
 
@@ -265,11 +266,12 @@ orxSTATUS orxFASTCALL Init()
   stInfo.zTag       = "zip";
   stInfo.pfnLocate  = ZipLocate;
   stInfo.pfnOpen    = ZipOpen;
+  stInfo.pfnClose   = ZipClose;
   stInfo.pfnGetSize = ZipGetSize;
   stInfo.pfnSeek    = ZipSeek;
   stInfo.pfnTell    = ZipTell;
   stInfo.pfnRead    = ZipRead;
-  stInfo.pfnClose   = ZipClose;
+  stInfo.pfnWrite   = orxNULL; // No write support
 
   // Registers it
   eResult = orxResource_RegisterType(&stInfo);
@@ -297,7 +299,7 @@ orxSTATUS orxFASTCALL Run()
   orxSTATUS eResult = orxSTATUS_SUCCESS;
 
   // Gets mouse world position
-  if(orxRender_GetWorldPosition(orxMouse_GetPosition(&vMousePos), &vMousePos) != orxNULL)
+  if(orxRender_GetWorldPosition(orxMouse_GetPosition(&vMousePos), orxNULL, &vMousePos) != orxNULL)
   {
     // New status for Action input?
     if(orxInput_HasNewStatus("Action") != orxFALSE)

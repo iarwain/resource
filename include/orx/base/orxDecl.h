@@ -42,6 +42,12 @@
 #ifndef _orxDECL_H_
 #define _orxDECL_H_
 
+#ifdef __orxDEBUG__
+
+  #define __orxPROFILER__
+
+#endif /* __orxDEBUG__ */
+
 #ifdef __APPLE__
 
   #include "TargetConditionals.h"
@@ -76,7 +82,7 @@
     #define __orxPPC64__
 
   /* x86_64? */
-  #elif defined(__x86_64)
+  #elif defined(__x86_64) || defined(_M_X64) || defined(__ia64__)
 
     #define __orxX86_64__
 
@@ -89,18 +95,37 @@
 
 #endif /* !__orxARM__ && !__orxPPC__ && !__orxPPC64__ && !__orxX86_64__ && !__orxX86__ */
 
-/* Power PC? */
-#ifdef __orxPPC__
+/* Has byte order? */
+#if defined(__BYTE_ORDER__) && defined(__ORDER_BIG_ENDIAN__)
 
-  #define __orxBIG_ENDIAN__
-  #undef __orxLITTLE_ENDIAN__
+  #if (__BYTE_ORDER__ == __ORDER_BIG_ENDIAN__)
 
-#else /* __orxPPC__ */
+    #define __orxBIG_ENDIAN__
+    #undef __orxLITTLE_ENDIAN__
 
-  #define __orxLITTLE_ENDIAN__
-  #undef __orxBIG_ENDIAN__
+  #else /* (__BYTE_ORDER__ == __ORDER_BIG_ENDIAN__) */
 
-#endif /* __orxPPC__ */
+    #define __orxLITTLE_ENDIAN__
+    #undef __orxBIG_ENDIAN__
+
+  #endif /* (__BYTE_ORDER__ == __ORDER_BIG_ENDIAN__) */
+
+#else /* __BYTE_ORDER__ && __ORDER_BIG_ENDIAN__ */
+
+  /* Power PC? */
+  #ifdef __orxPPC__
+
+    #define __orxBIG_ENDIAN__
+    #undef __orxLITTLE_ENDIAN__
+
+  #else /* __orxPPC__ */
+
+    #define __orxLITTLE_ENDIAN__
+    #undef __orxBIG_ENDIAN__
+
+  #endif /* __orxPPC__ */
+
+#endif /* __BYTE_ORDER__ && __ORDER_BIG_ENDIAN__ */
 
 /* No compiler defines? */
 #if !defined(__orxLLVM__) && !defined(__orxGCC__) && !defined(__orxMSVC__)
@@ -156,6 +181,8 @@
   #elif defined(linux) || defined(__linux__)
 
     #define __orxLINUX__
+
+    #pragma GCC diagnostic ignored "-Wunused-function"
 
   /* Mac? */
   #elif TARGET_OS_MAC
@@ -338,7 +365,7 @@
 
 
 /** Memory alignment macros */
-#define orxALIGN(ADDRESS, BLOCK_SIZE)   (((ADDRESS) + ((BLOCK_SIZE) - 1)) & (~((BLOCK_SIZE) - 1)))
+#define orxALIGN(ADDRESS, BLOCK_SIZE)   (((size_t)(ADDRESS) + ((BLOCK_SIZE) - 1)) & (~((BLOCK_SIZE) - 1)))
 
 #define orxALIGN16(ADDRESS)             orxALIGN(ADDRESS, 16)
 #define orxALIGN32(ADDRESS)             orxALIGN(ADDRESS, 32)
