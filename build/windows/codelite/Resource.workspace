@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeLite_Workspace Name="Resource" Database="./Resource.tags">
+  <Project Name="Resource" Path="Resource.project" Active="Yes" />
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="debug" Selected="yes">
+      <Project Name="Resource" ConfigName="debug"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="profile" Selected="yes">
+      <Project Name="Resource" ConfigName="profile"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="release" Selected="yes">
+      <Project Name="Resource" ConfigName="release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>
