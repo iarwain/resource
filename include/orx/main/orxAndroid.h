@@ -66,7 +66,8 @@ enum {
     LOOPER_ID_MAIN = 1,
     LOOPER_ID_SENSOR = 2,
     LOOPER_ID_KEY_EVENT = 3,
-    LOOPER_ID_TOUCH_EVENT = 4
+    LOOPER_ID_TOUCH_EVENT = 4,
+    LOOPER_ID_USER = 5
 };
 
 enum {
@@ -77,6 +78,20 @@ enum {
     APP_CMD_QUIT
 };
 
+typedef struct __orxANDROID_TOUCH_EVENT_t {
+        orxU32   u32ID;
+        orxFLOAT fX;
+        orxFLOAT fY;
+        orxU32   u32Action;
+
+} orxANDROID_TOUCH_EVENT;
+
+typedef struct __orxANDROID_KEY_EVENT_t {
+       orxU32 u32Action;
+       orxU32 u32KeyCode;
+
+} orxANDROID_KEY_EVENT;
+
 ANativeWindow * orxAndroid_GetNativeWindow();
 
 /**
@@ -85,6 +100,7 @@ ANativeWindow * orxAndroid_GetNativeWindow();
 const char * orxAndroid_GetInternalStoragePath();
 
 orxU32 orxAndroid_JNI_GetRotation();
+void   orxAndroid_JNI_SetWindowFormat(orxU32 format);
 
 /**
   Register APK resources IO
@@ -92,6 +108,8 @@ orxU32 orxAndroid_JNI_GetRotation();
 orxSTATUS orxAndroid_RegisterAPKResource();
 
 void orxAndroid_PumpEvents();
+void *orxAndroid_GetJNIEnv();
+jobject orxAndroid_GetActivity();
 
 #if defined(__cplusplus)
 }
@@ -100,8 +118,6 @@ void orxAndroid_PumpEvents();
 #define orxANDROID_EVENT_KEYBOARD       0
 #define orxANDROID_EVENT_KEYBOARD_DOWN  0
 #define orxANDROID_EVENT_KEYBOARD_UP    1
-#define KEYCODE_BACK 0x04
-#define KEYCODE_MENU 0x52
 
 #endif /* __orxANDROID__ */
 

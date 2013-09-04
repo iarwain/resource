@@ -294,13 +294,13 @@ static orxINLINE orxRGBA          orxRGBA_Set(orxU8 _u8R, orxU8 _u8G, orxU8 _u8B
 {
   orxRGBA stResult;
 
-  // Updates result
+  /* Updates result */
   stResult.u8R = _u8R;
   stResult.u8G = _u8G;
   stResult.u8B = _u8B;
   stResult.u8A = _u8A;
 
-  // Done!
+  /* Done! */
   return stResult;
 }
 
@@ -852,11 +852,12 @@ extern orxDLLAPI orxBITMAP *orxFASTCALL               orxDisplay_LoadBitmap(cons
 extern orxDLLAPI orxSTATUS orxFASTCALL                orxDisplay_SaveBitmap(const orxBITMAP *_pstBitmap, const orxSTRING _zFileName);
 
 
-/** Sets destination bitmap
- * @param[in]   _pstDst                               Destination bitmap
+/** Sets destination bitmaps
+ * @param[in]   _apstBitmapList                       Destination bitmap list
+ * @param[in]   _u32Number                            Number of destination bitmaps
  * @return orxSTATUS_SUCCESS / orxSTATUS_FAILURE
  */
-extern orxDLLAPI orxSTATUS orxFASTCALL                orxDisplay_SetDestinationBitmap(orxBITMAP *_pstDst);
+extern orxDLLAPI orxSTATUS orxFASTCALL                orxDisplay_SetDestinationBitmaps(orxBITMAP **_apstBitmapList, orxU32 _u32Number);
 
 /** Clears a bitmap
  * @param[in]   _pstBitmap                            Concerned bitmap
@@ -897,7 +898,7 @@ extern orxDLLAPI orxSTATUS orxFASTCALL                orxDisplay_SetBitmapData(o
  * @param[in]   _u32ByteNumber                        Number of bytes of the buffer
  * @return orxSTATUS_SUCCESS / orxSTATUS_FAILURE
  */
-extern orxDLLAPI orxSTATUS orxFASTCALL                orxDisplay_GetBitmapData(orxBITMAP *_pstBitmap, orxU8 *_au8Data, orxU32 _u32ByteNumber);
+extern orxDLLAPI orxSTATUS orxFASTCALL                orxDisplay_GetBitmapData(const orxBITMAP *_pstBitmap, orxU8 *_au8Data, orxU32 _u32ByteNumber);
 
 /** Sets a bitmap color (lighting/hue)
  * @param[in]   _pstBitmap                            Concerned bitmap

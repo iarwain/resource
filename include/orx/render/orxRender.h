@@ -32,7 +32,7 @@
 
 /**
  * @addtogroup orxRender
- * 
+ *
  * Render plugin module
  * Renders visible objects on screen, using active cameras/viewports.
  *
@@ -94,8 +94,7 @@ typedef enum __orxRENDER_EVENT_t
  */
 typedef struct __orxRENDER_EVENT_OBJECT_PAYLOAD_t
 {
-  orxBITMAP *pstRenderBitmap;             /**< Bitmap where object is rendered : 4 */
-  orxFRAME  *pstRenderFrame;              /**< Frame position where object is rendered : 8 */
+  orxFRAME *pstRenderFrame;              /**< Frame position where object is rendered : 4 / 8 */
 
 } orxRENDER_EVENT_OBJECT_PAYLOAD;
 
@@ -124,15 +123,15 @@ extern orxDLLAPI void orxFASTCALL             orxRender_Exit();
 
 /** Get a world position given a screen one (absolute picking)
  * @param[in]   _pvScreenPosition                     Concerned screen position
- * @param[in]   _pstViewport                          Concerned viewport, if orxNULL then the first viewport containing the screen position will be used
+ * @param[in]   _pstViewport                          Concerned viewport, if orxNULL then either the last viewport that contains the position (if any), or the last viewport with a camera in the list if none contains the position
  * @param[out]  _pvWorldPosition                      Corresponding world position
- * @return      orxVECTOR if found, orxNULL otherwise
+ * @return      orxVECTOR if found *inside* the display surface, orxNULL otherwise
  */
 extern orxDLLAPI orxVECTOR *orxFASTCALL       orxRender_GetWorldPosition(const orxVECTOR *_pvScreenPosition, const orxVIEWPORT *_pstViewport, orxVECTOR *_pvWorldPosition);
 
 /** Get a screen position given a world one and a viewport (rendering position)
  * @param[in]   _pvWorldPosition                      Concerned world position
- * @param[in]   _pstViewport                          Concerned viewport, if orxNULL then the first viewport will be used
+ * @param[in]   _pstViewport                          Concerned viewport, if orxNULL then the last viewport with a camera will be used
  * @param[out]  _pvScreenPosition                     Corresponding screen position
  * @return      orxVECTOR if found (can be off-screen), orxNULL otherwise
  */
